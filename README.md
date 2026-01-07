@@ -106,7 +106,6 @@ Uygulamayı Docker ile konteyner içinde çalıştırmak isterseniz:
         docker run -d -p 8501:8501 --env-file .env --network trip-network --env API_URL=http://trip-backend:8000 --name trip-frontend ai-trip-planner streamlit run streamlit_app.py
         ```
     
-    *Not: `.env` dosyanızın Docker'a parametre olarak geçildiğinden emin olun.*
 
 ### 🛑 Durdurma ve Temizleme
 
@@ -139,8 +138,7 @@ Kurulum tamamlandıktan sonra uygulamayı çalıştırmak için **iki ayrı term
     *   Ana ekrandaki kutucuğa seyahat isteğinizi yazın (örneğin: *"Paris'e 3 günlük sanat ve gastronomi gezisi planla"*).
     *   **"Seyahatimi Planla"** butonuna tıklayın ve yapay zekanın sihrini izleyin!
 
-![Örnek Sonuç Ekranı](PLACEHOLDER_RESULT_IMAGE_URL_HERE)
-*Yapay zeka tarafından oluşturulan örnek bir seyahat planı.*
+
 
 ## 📂 Proje Yapısı
 
@@ -172,6 +170,6 @@ Bu proje, **LangGraph** kütüphanesini kullanarak durum tabanlı bir ajan (stat
 4.  Toplanan bilgiler ve LLM'in (Large Language Model) yetenekleri birleştirilerek kapsamlı bir yanıt oluşturulur.
 5.  Sonuç, kullanıcıya düzenli bir formatta sunulur.
 
-![İş Akış Şeması](my_graph.png)
+![İş Akış Şeması](my_graph.png) 
 *Ajanın karar verme ve işlem akış şeması.*
 
