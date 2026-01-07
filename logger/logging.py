@@ -10,19 +10,15 @@ def get_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
 
-    # prevent adding multiple handlers if get_logger is called multiple times
     if not logger.handlers:
-        # Create formatters
         formatter = logging.Formatter(
             "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         )
 
-        # Console Handler
         console_handler = logging.StreamHandler(sys.stdout)
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
-        # File Handler
         log_dir = "logs"
         os.makedirs(log_dir, exist_ok=True)
         file_handler = RotatingFileHandler(
