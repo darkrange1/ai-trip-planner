@@ -13,7 +13,6 @@ class CalculatorTool:
         def estimate_total_hotel_cost(price_per_night: str | float | int, total_days: float | int) -> float:
             """Calculate total hotel cost"""
             try:
-                # Clean string if necessary (remove currency symbols like $)
                 if isinstance(price_per_night, str):
                     clean_price = ''.join(c for c in price_per_night if c.isdigit() or c == '.')
                     price_val = float(clean_price) if clean_price else 0.0
