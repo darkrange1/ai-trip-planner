@@ -148,7 +148,7 @@ Projenin temel dosya ve klasör yapısı şöyledir:
 AI_Trip_Planner/
 ├── agent/                  # Ajanın mantığı ve iş akışı (LangGraph)
 │   └── agentic_workflow.py
-├── tools/                  # Ajanın kullandığı araçlar
+├── tools/                  # Ajanın kullandığı araçlar.
 │   ├── place_search_tool.py
 │   ├── weather_info_tool.py
 │   ├── expense_calculator_tool.py
