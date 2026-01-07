@@ -18,7 +18,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # set specific origins in prod
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -48,23 +48,19 @@ async def query_travel_agent(query: QueryRequest):
     try:
         logger.info(f"Received query: {query.question}")
         print(query)
-        # Using Google as default provider
         graph = GraphBuilder(model_provider="google")
         react_app = graph()
-        #react_app = graph.build_graph()
 
         png_graph = react_app.get_graph().draw_mermaid_png()
         with open("my_graph.png", "wb") as f:
             f.write(png_graph)
 
         logger.info(f"Graph saved as 'my_graph.png' in {os.getcwd()}")
-        # Assuming request is a pydantic object like: {"question": "your text"}
         messages = {"messages": [query.question]}
         output = react_app.invoke(messages)
 
-        # If result is dict with messages:
         if isinstance(output, dict) and "messages" in output:
-            final_output = output["messages"][-1].content  # Last AI response
+            final_output = output["messages"][-1].content  
         else:
             final_output = str(output)
         
