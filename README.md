@@ -158,7 +158,7 @@ AI_Trip_Planner/
 ├── streamlit_app.py        # Ana uygulama arayüzü (Streamlit)
 ├── requirements.txt        # Python bağımlılıkları
 ├── Dockerfile              # Konteynerleştirme yapılandırması
-└── README.md               # Proje dokümantasyonu
+└── README.md               # Proje dokümantasyonu.
 ```
 
 ## 🤖 Nasıl Çalışır?
