@@ -23,7 +23,7 @@ class PlaceSearchTool:
                     return f"Following are the attractions of {place} as suggested by google: {attraction_result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_attractions(place)
-                return f"Google cannot find the details due to {e}. \nFollowing are the attractions of {place}: {tavily_result}"  ## Fallback search using tavily in case google places fail
+                return f"Google cannot find the details due to {e}. \nFollowing are the attractions of {place}: {tavily_result}"  
         
         @tool
         def search_restaurants(place:str) -> str:
@@ -34,7 +34,7 @@ class PlaceSearchTool:
                     return f"Following are the restaurants of {place} as suggested by google: {restaurants_result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_restaurants(place)
-                return f"Google cannot find the details due to {e}. \nFollowing are the restaurants of {place}: {tavily_result}"  ## Fallback search using tavily in case google places fail
+                return f"Google cannot find the details due to {e}. \nFollowing are the restaurants of {place}: {tavily_result}"  
         
         @tool
         def search_activities(place:str) -> str:
@@ -45,7 +45,7 @@ class PlaceSearchTool:
                     return f"Following are the activities in and around {place} as suggested by google: {restaurants_result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_activity(place)
-                return f"Google cannot find the details due to {e}. \nFollowing are the activities of {place}: {tavily_result}"  ## Fallback search using tavily in case google places fail
+                return f"Google cannot find the details due to {e}. \nFollowing are the activities of {place}: {tavily_result}"  
         
         @tool
         def search_transportation(place:str) -> str:
@@ -56,6 +56,6 @@ class PlaceSearchTool:
                     return f"Following are the modes of transportation available in {place} as suggested by google: {restaurants_result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_transportation(place)
-                return f"Google cannot find the details due to {e}. \nFollowing are the modes of transportation available in {place}: {tavily_result}"  ## Fallback search using tavily in case google places fail
+                return f"Google cannot find the details due to {e}. \nFollowing are the modes of transportation available in {place}: {tavily_result}"  
         
         return [search_attractions, search_restaurants, search_activities, search_transportation]
